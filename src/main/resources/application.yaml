@@ -1,0 +1,37 @@
+# port: 8080
+
+spring:
+  application:
+    name: Joao_Ramos_TP1_APIGateway
+  # config:
+  #   import: "optional:configserver:http://localhost:1111"
+  config:
+    import: "configserver:http://localhost:8888"
+#   cloud:
+#     gateway:
+#       enabled: true
+#       default-filters:
+#         - StripPrefix=1 
+#       routes:
+#         - id: ola-service
+#           uri: http://localhost:8082
+#           predicates:
+#             - Path=/api,/api/**
+
+#         - id: frontend
+#           uri: http://localhost:8081
+#           predicates:
+#             - Path=/app,/app/**,/error,/error/**
+            
+#         - id: eureka
+#           uri: http://localhost:8761
+#           predicates:
+#             - Path=/admin,/admin/**, /eureka/**, /eureka
+#           filters:
+#             - RewritePath=/admin/(?<segment>.*), /$\{segment}
+
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: "*"
